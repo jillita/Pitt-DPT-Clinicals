@@ -72,7 +72,22 @@ body { margin: 0; padding: 0; }
 
     // Wait until the map has finished loading.
     map.on('load', () => {
-    
+
+        map.addSource('Current Inpatient Partners', {
+            type: 'vector',
+            url: 'mapbox://jillita.7as4l1c7'
+        });
+        map.addLayer({
+            'id': 'Current Inpatient Partners',
+            'type': 'point',
+            'source': 'Current Inpatient Partners',
+            'layout': {
+                // Make the layer visible by default.
+                'visibility': 'visible'
+            },
+            'source-layer': 'Current Inpatient Partners'
+        });
+	    
 	map.addSource('Current Inpatient Partners Heatmap', {
             type: 'vector',
             url: 'mapbox://jillita.7as4l1c7'
@@ -88,20 +103,7 @@ body { margin: 0; padding: 0; }
 	  'source-layer': 'Current Inpatient Partners Heatmap'
         });
 	    
-        map.addSource('Current Inpatient Partners', {
-            type: 'vector',
-            url: 'mapbox://jillita.7as4l1c7'
-        });
-        map.addLayer({
-            'id': 'Current Inpatient Partners',
-            'type': 'point',
-            'source': 'Current Inpatient Partners',
-            'layout': {
-                // Make the layer visible by default.
-                'visibility': 'visible'
-            },
-            'source-layer': 'Current Inpatient Partners'
-        });
+
 
 
     });
