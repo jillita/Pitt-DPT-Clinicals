@@ -88,34 +88,34 @@ body { margin: 0; padding: 0; }
 	  'source-layer': 'States with DPT Students Class of 2024-2025'
         });
 	    
-	map.addSource('DPT Class of 2024-2025 Cities Heatmap', {
+	map.addSource('Current Inpatient Partners Heatmap', {
             type: 'vector',
-            url: 'mapbox://jillita.777lju7d'
+            url: 'mapbox://jillita.7as4l1c7'
         });
         map.addLayer({
-            'id': 'DPT Class of 2024-2025 Cities Heatmap',
+            'id': 'Current Inpatient Partners Heatmap',
             'type': 'heatmap',
-            'source': 'DPT Class of 2024-2025 Cities Heatmap',
+            'source': 'Current Inpatient Partners Heatmap',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible'
             },
-	  'source-layer': 'DPT Class of 2024-2025 Cities Heatmap'
+	  'source-layer': 'Current Inpatient Partners Heatmap'
         });
 	    
-        map.addSource('DPT Class of 2024-2025 Cities', {
+        map.addSource('Current Inpatient Partners', {
             type: 'vector',
-            url: 'mapbox://jillita.777lju7d'
+            url: 'mapbox://jillita.7as4l1c7'
         });
         map.addLayer({
-            'id': 'DPT Class of 2024-2025 Cities',
+            'id': 'Current Inpatient Partners',
             'type': 'point',
-            'source': 'DPT Class of 2024-2025 Cities',
+            'source': 'Current Inpatient Partners',
             'layout': {
                 // Make the layer visible by default.
                 'visibility': 'visible'
             },
-            'source-layer': 'DPT Class of 2024-2025 Cities'
+            'source-layer': 'Current Inpatient Partners'
         });
 
 
@@ -124,12 +124,12 @@ body { margin: 0; padding: 0; }
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('DPT Class of 2024-2025 Cities Heatmap') || !map.getLayer('DPT Class of 2024-2025 Cities') || !map.getLayer('States with DPT Students Class of 2024-2025')) {
+        if (!map.getLayer('Current Inpatient Partners Heatmap') || !map.getLayer('Current Inpatient Partners') || !map.getLayer('States with DPT Students Class of 2024-2025')) {
             return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ['DPT Class of 2024-2025 Cities Heatmap', 'DPT Class of 2024-2025 Cities', 'States with DPT Students Class of 2024-2025'];
+        const toggleableLayerIds = ['Current Inpatient Partners Heatmap', 'Current Inpatient Partners', 'States with DPT Students Class of 2024-2025'];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
