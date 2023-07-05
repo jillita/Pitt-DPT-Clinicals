@@ -73,6 +73,22 @@ body { margin: 0; padding: 0; }
     // Wait until the map has finished loading.
     map.on('load', () => {
 
+	
+        map.addSource('DPT Class of 2024 Inpatient Clinical Needs Heatmap', {
+            type: 'vector',
+            url: 'mapbox://jillita.cv94kkwe'
+        });
+        map.addLayer({
+            'id': 'DPT Class of 2024 Inpatient Clinical Needs Heatmap',
+            'type': 'heatmap',
+            'source': 'DPT Class of 2024 Inpatient Clinical Needs Heatmap',
+            'layout': {
+                // Make the layer visible by default.
+                'visibility': 'visible'
+            },
+            'source-layer': 'DPT Class of 2024 Inpatient Clinical Needs Heatmap'
+        });    
+
         map.addSource('Current Inpatient Partners', {
             type: 'vector',
             url: 'mapbox://jillita.7as4l1c7'
@@ -111,12 +127,12 @@ body { margin: 0; padding: 0; }
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('Current Inpatient Partners') || !map.getLayer('Current Inpatient Partners Heatmap')) {
+        if (!map.getLayer('DPT Class of 2024 Inpatient Clinical Needs Heatmap') || !map.getLayer('Current Inpatient Partners') || !map.getLayer('Current Inpatient Partners Heatmap')) {
             return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ['Current Inpatient Partners', 'Current Inpatient Partners Heatmap'];
+        const toggleableLayerIds = ['DPT Class of 2024 Inpatient Clinical Needs Heatmap','Current Inpatient Partners', 'Current Inpatient Partners Heatmap'];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
