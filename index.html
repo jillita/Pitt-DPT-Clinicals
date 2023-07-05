@@ -47,12 +47,12 @@ body { margin: 0; padding: 0; }
     }
 
     #menu a.active {
-        background-color: #0b6f17;
+        background-color: #3887be;
         color: #ffffff;
     }
 
     #menu a.active:hover {
-        background: #3074a4;
+        background: #3887be;
     }
 </style>
 
@@ -72,22 +72,7 @@ body { margin: 0; padding: 0; }
 
     // Wait until the map has finished loading.
     map.on('load', () => {
-
-	map.addSource('States with DPT Students Class of 2024-2025', {
-            type: 'vector',
-            url: 'mapbox://jillita.777lju7d'
-        });
-        map.addLayer({
-            'id': 'States with DPT Students Class of 2024-2025',
-            'type': 'fill',
-            'source': 'States with DPT Students Class of 2024-2025',
-            'layout': {
-                // Make the layer visible by default.
-                'visibility': 'visible'
-            },
-	  'source-layer': 'States with DPT Students Class of 2024-2025'
-        });
-	    
+    
 	map.addSource('Current Inpatient Partners Heatmap', {
             type: 'vector',
             url: 'mapbox://jillita.7as4l1c7'
