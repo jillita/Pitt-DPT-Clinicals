@@ -109,12 +109,12 @@ body { margin: 0; padding: 0; }
     // After the last frame rendered before the map enters an "idle" state.
     map.on('idle', () => {
         // If these two layers were not added to the map, abort
-        if (!map.getLayer('Current Inpatient Partners Heatmap') || !map.getLayer('Current Inpatient Partners') || !map.getLayer('States with DPT Students Class of 2024-2025')) {
+        if (!map.getLayer('Current Inpatient Partners Heatmap') || !map.getLayer('Current Inpatient Partners')) {
             return;
         }
 
         // Enumerate ids of the layers.
-        const toggleableLayerIds = ['Current Inpatient Partners Heatmap', 'Current Inpatient Partners', 'States with DPT Students Class of 2024-2025'];
+        const toggleableLayerIds = ['Current Inpatient Partners Heatmap', 'Current Inpatient Partners'];
 
         // Set up the corresponding toggle button for each layer.
         for (const id of toggleableLayerIds) {
